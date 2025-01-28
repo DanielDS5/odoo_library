@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+
+        <record id="book0" model="library.book">
+            <field name="name">The Fellowship of the Ring</field>
+            <field name="isbn">9780618260515, 061826051X</field>
+            <field name="author">J. R. R. Tolkien</field>
+            <field name="publication_date">1954-06-29</field>
+        </record>
+    
+        <record id="book1" model="library.book">
+            <field name="name">A Dance with Dragons</field>
+            <field name="isbn">9786073123709, 6073123701</field>
+            <field name="author">George R.R. Martin</field>
+            <field name="publication_date">2011-06-12</field>
+        </record>
+    
+        <record id="book2" model="library.book">
+            <field name="name">The Last Wish</field>
+            <field name="isbn">9788498890372, 8498890373</field>
+            <field name="author">Andrzej Sapkowski</field>
+            <field name="publication_date">1993-03-01</field>
+        </record>
+
+        <record id="book3" model="library.book">
+            <field name="name">Harry Potter and the Deathly Hallows</field>
+            <field name="isbn">9788498381450, 8498381452</field>
+            <field name="author">J. K. Rowling</field>
+            <field name="publication_date">2007-06-21</field>
+        </record>
+
+        <record id="book4" model="library.book">
+            <field name="name">Mistborn: The Final Empire</field>
+            <field name="isbn">9788466631990, 8466631992</field>
+            <field name="author">Brandon Sanderson</field>
+            <field name="publication_date">2006-06-17</field>
+        </record>
+    
+    </data>
+</odoo>
