@@ -1,0 +1,169 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* library_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0-20240624\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-29 00:44+0000\n"
+"PO-Revision-Date: 2025-01-29 00:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_book__author
+msgid "Author"
+msgstr "Autor"
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_loan__book_id
+#: model_terms:ir.ui.view,arch_db:library_management.library_book_view_form
+msgid "Book"
+msgstr "Libro"
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_book__name
+msgid "Book name"
+msgstr "Nombre del libro"
+
+#. module: library_management
+#: model:ir.actions.act_window,name:library_management.library_book_action
+#: model:ir.ui.menu,name:library_management.library_menu_book
+#: model:ir.ui.menu,name:library_management.library_menu_book_action
+#: model_terms:ir.ui.view,arch_db:library_management.library_book_view_tree
+msgid "Books"
+msgstr "Libros"
+
+#. module: library_management
+#: model:ir.model.fields.selection,name:library_management.selection__library_loan__status__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_book__create_uid
+#: model:ir.model.fields,field_description:library_management.field_library_loan__create_uid
+msgid "Created by"
+msgstr "Creado Por"
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_book__create_date
+#: model:ir.model.fields,field_description:library_management.field_library_loan__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: library_management
+#: model:ir.model.fields.selection,name:library_management.selection__library_loan__status__returned
+msgid "Returned"
+msgstr "Devuelto"
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_book__display_name
+#: model:ir.model.fields,field_description:library_management.field_library_loan__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_book__id
+#: model:ir.model.fields,field_description:library_management.field_library_loan__id
+msgid "ID"
+msgstr ""
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_book__isbn
+msgid "ISBN"
+msgstr ""
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_book____last_update
+#: model:ir.model.fields,field_description:library_management.field_library_loan____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_book__write_uid
+#: model:ir.model.fields,field_description:library_management.field_library_loan__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_book__write_date
+#: model:ir.model.fields,field_description:library_management.field_library_loan__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: library_management
+#: model:ir.ui.menu,name:library_management.library_menu_root
+msgid "Library"
+msgstr "Biblioteca"
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_loan__loan_date
+msgid "Loan Date"
+msgstr "Fecha de Préstamo"
+
+#. module: library_management
+#: model:ir.actions.act_window,name:library_management.library_loan_action
+#: model:ir.ui.menu,name:library_management.library_menu_loan_action
+#: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_form
+msgid "Loans"
+msgstr "Préstamos"
+
+#. module: library_management
+#: model:ir.model.fields.selection,name:library_management.selection__library_loan__status__pending
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: library_management
+#: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_form
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: library_management
+#: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_tree
+msgid "Loans"
+msgstr "Préstamos"
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_book__publication_date
+msgid "Publication Date"
+msgstr "Fecha de publicación"
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_loan__reader_id
+msgid "Reader name"
+msgstr "Nombre del lector"
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_loan__return_deadline
+msgid "Return Deadline"
+msgstr "Fecha límite de devolución"
+
+#. module: library_management
+#: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_form
+msgid "Returned"
+msgstr "Devuelto"
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_loan__status
+msgid "Status"
+msgstr "Estado"
+
+#. module: library_management
+#: model:ir.model.constraint,message:library_management.constraint_library_book_check_isbn
+msgid "The ISBN must be unique"
+msgstr "El ISBN debe ser único"
+
+#. module: library_management
+#: model:ir.model,name:library_management.model_library_book
+msgid "library.book"
+msgstr ""
+
+#. module: library_management
+#: model:ir.model,name:library_management.model_library_loan
+msgid "library.loan"
+msgstr ""
