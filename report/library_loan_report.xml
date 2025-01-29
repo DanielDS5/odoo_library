@@ -1,0 +1,10 @@
+<odoo>
+    <report
+        id="action_report_library_loan"
+        model="library.loan"
+        string="Library Loan Report"
+        report_type="qweb-pdf"
+        name="library_management.report_library_loan"
+        file="library_management.report_library_loan"
+        print_report_name="'Library_Loan_Report_' + (object.return_deadline and object.return_deadline.strftime('%Y_%m_%d') or '')"/>
+</odoo>

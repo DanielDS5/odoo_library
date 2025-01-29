@@ -18,6 +18,8 @@
         'views/library_loan_views.xml',
         'views/library_menus.xml',
         'views/res.partner.views.xml',
+        'report/library_loan_template.xml',
+        'report/library_loan_report.xml',
     ],
     'demo': [
         'demo/demo.xml'
