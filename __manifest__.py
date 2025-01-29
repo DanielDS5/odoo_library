@@ -12,6 +12,7 @@
     'installable': True,
     'auto_install': False,
     'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
         'views/library_book_views.xml',
         'views/library_loan_views.xml',
