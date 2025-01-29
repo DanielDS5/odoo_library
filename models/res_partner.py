@@ -3,13 +3,14 @@ from odoo import fields, models, api
 class ResPartner(models.Model):
     _inherit = "res.partner"
     
-    loan_ids = fields.One2many('library.loan', 'reader_id', string='Properties', domain="[('status', '=', 'pending')]")
-    loan_count = fields.Integer(compute='_compute_loan_count')
+    loan_ids = fields.One2many('library.loan', 'reader_id')
+    pending_loan_ids = fields.One2many(compute='_compute_pending_loan')
     
-    @api.depends('loan_ids')
-    def _compute_loan_count(self):
+    @api.depends('loan_ids.status')
+    def _compute_pending_loan(self):
         for reader in self:
-            reader.loan_count = len(reader.loan_ids)
+            pending_loans = reader.loan_ids.filtered(lambda loan: loan.status == 'pending')
+            reader.pending_loan_ids = [(6, 0, pending_loans.ids)]
             
     def action_library_stat_button(self):
         self.ensure_one()
