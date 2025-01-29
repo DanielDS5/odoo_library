@@ -16,6 +16,7 @@
         'views/library_book_views.xml',
         'views/library_loan_views.xml',
         'views/library_menus.xml',
+        'views/res.partner.views.xml',
     ],
     'demo': [
         'demo/demo.xml'

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_partner_view_loan_button" model="ir.ui.view">
+        <field name="name">res.partner.view.purchase.buttons</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="priority" eval="9"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_library_stat_button"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-book"
+                        context="{'xml_id':'library_management.action_partner_books'}">
+                        <field name="loan_ids" string="Loan" widget="statinfo" />
+                </button>
+            </div>
+        </field>
+    </record>
+
+</odoo>

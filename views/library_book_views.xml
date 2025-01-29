@@ -8,6 +8,13 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <record id="action_partner_books" model="ir.actions.act_window">
+        <field name="name">Books on Loan</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('loan_ids.reader_id', '=', context.get('active_id')), ('loan_ids.status', '=', 'pending')]</field>
+    </record>
+
     <!-- Tree View -->
     <record id="library_book_view_tree" model="ir.ui.view">
         <field name="name">library.book.tree</field>
