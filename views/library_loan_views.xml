@@ -50,4 +50,22 @@
         </field>
     </record>
 
+    <!-- Search -->
+    <record id="library_loan_view_search" model="ir.ui.view">
+        <field name="name">library.loan.search</field>
+        <field name="model">library.loan</field>
+        <field name="arch" type="xml">
+            <search string="Search Opportunities">
+                <filter string="Draft" name="draft" domain="[('status', '=', 'draft')]"/>
+                <filter string="Pending" name="pending" domain="[('status', '=', 'pending')]"/>
+                <filter string="Returned" name="returned" domain="[('status', '=', 'returned')]"/>
+                <group expand="1" string="Group By">
+                    <filter name="status" context="{'group_by':'status'}"/>
+                    <filter name="book" context="{'group_by':'book_id'}"/>
+                    <filter name="reader" context="{'group_by':'reader_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
 </odoo>
