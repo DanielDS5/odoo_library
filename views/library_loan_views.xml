@@ -5,7 +5,7 @@
     <record id="library_loan_action" model="ir.actions.act_window">
         <field name="name">Loans</field>
         <field name="res_model">library.loan</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,kanban</field>
     </record>
 
     <!-- Tree View -->
@@ -68,4 +68,37 @@
         </field>
     </record>
 
+    <!-- Kanban -->
+    <record id="view_library_loan_kanban" model="ir.ui.view">
+        <field name="name">library.loan.kanban</field>
+        <field name="model">library.loan</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="book_id"/>
+                <field name="reader_id"/>
+                <field name="loan_date"/>
+                <field name="return_deadline"/>
+                <field name="status"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="'oe_kanban_global_click'">
+                            <h3>
+                                <field name="book_id"/>
+                            </h3>
+                            <p><i><field name="reader_id"/></i></p>
+                
+                            <div>
+                                <p>Loan date: <field name="loan_date"/></p>
+                                <p>Return deadline: <field name="return_deadline"/></p>
+                            </div>
+
+                            <strong>
+                                <field name="status"/>
+                            </strong>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 </odoo>
