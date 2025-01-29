@@ -18,6 +18,7 @@
                 <field name="isbn"/>
                 <field name="author"/>
                 <field name="publication_date"/>
+                <field name="is_loaned"/>
             </tree>
         </field>
     </record>
