@@ -6,7 +6,7 @@
     'author': 'Grupo Hernández S.U.R.L',
     'company': 'Grupo Hernández S.U.R.L',
     'category': 'Education',
-    'depends': ['base'],
+    'depends': ['base', 'mail'],
     'license': 'OPL-1',
     'application': True,
     'installable': True,
@@ -20,6 +20,8 @@
         'views/res.partner.views.xml',
         'report/library_loan_template.xml',
         'report/library_loan_report.xml',
+        'data/library_loan_cron.xml',
+        'data/mail_template.xml',
     ],
     'demo': [
         'demo/demo.xml'

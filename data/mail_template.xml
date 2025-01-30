@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <record id="mail_template_loan_reminder" model="mail.template">
+            <field name="name">Loan Reminder</field>
+            <field name="model_id" ref="model_library_loan"/>
+            <field name="subject">Loan Reminder: Book Due Soon</field>
+            <field name="email_from">${user.email'|safe}</field>
+            <field name="email_to">${object.reader_id.email|safe}</field>
+            <field name="body_html">
+                <![CDATA[
+                <p>Hello ${object.reader_id.name},</p>
+                <p>This is a reminder that the book <b>${object.book_id.name}</b> is due on <b>${object.return_deadline}</b>.</p>
+                <p>Please return it on time</p>
+                <p>Thank you!</p>
+                ]]>
+            </field>
+        </record>
+    </data>
+</odoo>
