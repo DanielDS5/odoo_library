@@ -1,4 +1,5 @@
-from odoo import fields, models
+from odoo import fields, models, api
+from odoo.exceptions import ValidationError
 
 class Loan(models.Model):
     _name = 'library.loan'
@@ -16,3 +17,9 @@ class Loan(models.Model):
     def action_return(self):
         for loan in self:
             loan.status = 'returned'
+            
+    @api.constrains('loan_date', 'return_deadline')
+    def _check_dates(self):
+        for record in self:
+            if record.return_deadline and record.return_deadline < record.loan_date:
+                raise ValidationError("The return deadline cannot be earlier than the loan date.")
