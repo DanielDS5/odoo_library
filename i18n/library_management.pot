@@ -6,14 +6,54 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0-20240624\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-29 00:44+0000\n"
-"PO-Revision-Date: 2025-01-29 00:44+0000\n"
+"POT-Creation-Date: 2025-01-30 06:39+0000\n"
+"PO-Revision-Date: 2025-01-30 06:39+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: library_management
+#: model:mail.template,body_html:library_management.mail_template_loan_reminder
+msgid ""
+"\n"
+"                \n"
+"                <p>Hello ${object.reader_id.name},</p>\n"
+"                <p>This is a reminder that the book <b>${object.book_id.name}</b> is due on <b>${object.return_deadline}</b>.</p>\n"
+"                <p>Please return it on time</p>\n"
+"                <p>Thank you!</p>\n"
+"                \n"
+"            "
+msgstr ""
+
+#. module: library_management
+#: model:ir.actions.report,print_report_name:library_management.action_report_library_loan
+msgid ""
+"'Library_Loan_Report_' + (object.return_deadline and "
+"object.return_deadline.strftime('%Y_%m_%d') or '')"
+msgstr ""
+
+#. module: library_management
+#: model_terms:ir.ui.view,arch_db:library_management.report_library_loan
+msgid "<strong>Book:</strong>"
+msgstr ""
+
+#. module: library_management
+#: model_terms:ir.ui.view,arch_db:library_management.report_library_loan
+msgid "<strong>Loan Date:</strong>"
+msgstr ""
+
+#. module: library_management
+#: model_terms:ir.ui.view,arch_db:library_management.report_library_loan
+msgid "<strong>Reader:</strong>"
+msgstr ""
+
+#. module: library_management
+#: model_terms:ir.ui.view,arch_db:library_management.report_library_loan
+msgid "<strong>Return Deadline:</strong>"
+msgstr ""
 
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_book__author
@@ -33,15 +73,19 @@ msgstr ""
 
 #. module: library_management
 #: model:ir.actions.act_window,name:library_management.library_book_action
-#: model:ir.ui.menu,name:library_management.library_menu_book
 #: model:ir.ui.menu,name:library_management.library_menu_book_action
 #: model_terms:ir.ui.view,arch_db:library_management.library_book_view_tree
 msgid "Books"
 msgstr ""
 
 #. module: library_management
-#: model:ir.model.fields.selection,name:library_management.selection__library_loan__status__draft
-msgid "Borrador"
+#: model:ir.actions.act_window,name:library_management.action_partner_books
+msgid "Books on Loan"
+msgstr ""
+
+#. module: library_management
+#: model:ir.model,name:library_management.model_res_partner
+msgid "Contact"
 msgstr ""
 
 #. module: library_management
@@ -57,14 +101,20 @@ msgid "Created on"
 msgstr ""
 
 #. module: library_management
-#: model:ir.model.fields.selection,name:library_management.selection__library_loan__status__returned
-msgid "Devuelto"
-msgstr ""
-
-#. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_book__display_name
 #: model:ir.model.fields,field_description:library_management.field_library_loan__display_name
 msgid "Display Name"
+msgstr ""
+
+#. module: library_management
+#: model:ir.model.fields.selection,name:library_management.selection__library_loan__status__draft
+#: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_search
+msgid "Draft"
+msgstr ""
+
+#. module: library_management
+#: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_search
+msgid "Group By"
 msgstr ""
 
 #. module: library_management
@@ -76,6 +126,11 @@ msgstr ""
 #. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_book__isbn
 msgid "ISBN"
+msgstr ""
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_book__is_loaned
+msgid "Is Loaned"
 msgstr ""
 
 #. module: library_management
@@ -97,8 +152,31 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: library_management
+#: model:res.groups,name:library_management.group_librarians
+msgid "Librarians"
+msgstr ""
+
+#. module: library_management
 #: model:ir.ui.menu,name:library_management.library_menu_root
 msgid "Library"
+msgstr ""
+
+#. module: library_management
+#: model:ir.actions.report,name:library_management.action_report_library_loan
+#: model_terms:ir.ui.view,arch_db:library_management.report_library_loan
+msgid "Library Loan Report"
+msgstr ""
+
+#. module: library_management
+#: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_graph
+msgid "Library Loan Statistics"
+msgstr ""
+
+#. module: library_management
+#: model:ir.model.fields,field_description:library_management.field_library_book__loan_ids
+#: model:ir.model.fields,field_description:library_management.field_res_partner__loan_ids
+#: model:ir.model.fields,field_description:library_management.field_res_users__loan_ids
+msgid "Loan"
 msgstr ""
 
 #. module: library_management
@@ -107,25 +185,45 @@ msgid "Loan Date"
 msgstr ""
 
 #. module: library_management
+#: model:mail.template,name:library_management.mail_template_loan_reminder
+msgid "Loan Reminder"
+msgstr ""
+
+#. module: library_management
+#: model:mail.template,subject:library_management.mail_template_loan_reminder
+msgid "Loan Reminder: Book Due Soon"
+msgstr ""
+
+#. module: library_management
+#: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_kanban
+msgid "Loan date:"
+msgstr ""
+
+#. module: library_management
 #: model:ir.actions.act_window,name:library_management.library_loan_action
 #: model:ir.ui.menu,name:library_management.library_menu_loan_action
 #: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_form
+#: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_tree
+#: model_terms:ir.ui.view,arch_db:library_management.res_partner_view_loan_button
 msgid "Loans"
 msgstr ""
 
 #. module: library_management
-#: model:ir.model.fields.selection,name:library_management.selection__library_loan__status__pending
-msgid "Pendiente"
+#: model:ir.ui.menu,name:library_management.library_menu_book
+msgid "Manage"
 msgstr ""
 
 #. module: library_management
+#: model:ir.model.fields.selection,name:library_management.selection__library_loan__status__pending
 #: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_form
+#: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_search
 msgid "Pending"
 msgstr ""
 
 #. module: library_management
-#: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_tree
-msgid "Préstamos"
+#: model:ir.model.fields,field_description:library_management.field_res_partner__pending_loan_ids
+#: model:ir.model.fields,field_description:library_management.field_res_users__pending_loan_ids
+msgid "Pending Loan"
 msgstr ""
 
 #. module: library_management
@@ -139,13 +237,36 @@ msgid "Reader name"
 msgstr ""
 
 #. module: library_management
+#: model:res.groups,name:library_management.group_readers
+msgid "Readers"
+msgstr ""
+
+#. module: library_management
 #: model:ir.model.fields,field_description:library_management.field_library_loan__return_deadline
 msgid "Return Deadline"
 msgstr ""
 
 #. module: library_management
+#: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_kanban
+msgid "Return deadline:"
+msgstr ""
+
+#. module: library_management
+#: model:ir.model.fields.selection,name:library_management.selection__library_loan__status__returned
 #: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_form
+#: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_search
 msgid "Returned"
+msgstr ""
+
+#. module: library_management
+#: model_terms:ir.ui.view,arch_db:library_management.library_loan_view_search
+msgid "Search Opportunities"
+msgstr ""
+
+#. module: library_management
+#: model:ir.actions.server,name:library_management.ir_cron_send_loan_reminders_ir_actions_server
+#: model:ir.cron,cron_name:library_management.ir_cron_send_loan_reminders
+msgid "Send Loan Reminders"
 msgstr ""
 
 #. module: library_management
