@@ -5,11 +5,17 @@ from datetime import timedelta
 class Loan(models.Model):
     _name = 'library.loan'
     
+    name = fields.Char(compute='_compute_name')
     book_id = fields.Many2one('library.book', string='Book')
     reader_id = fields.Many2one('res.partner', string='Reader name')
     loan_date = fields.Date()
     return_deadline = fields.Date()
     status = fields.Selection(selection=[('draft', 'Draft'), ('pending', 'Pending'), ('returned', 'Returned')], default='draft')
+    
+    @api.depends('book_id', 'reader_id')
+    def _compute_name(self):
+        for loan in self:
+            loan.name = f'{loan.book_id.name} loaned to {loan.reader_id.name}'
     
     def action_pending(self):
         for loan in self:
@@ -24,7 +30,7 @@ class Loan(models.Model):
         for record in self:
             if record.return_deadline and record.return_deadline < record.loan_date:
                 raise ValidationError("The return deadline cannot be earlier than the loan date.")
-            
+    
     def send_loan_reminders(self):
         today = fields.Date.today()
         reminder_date = today + timedelta(days=3)
