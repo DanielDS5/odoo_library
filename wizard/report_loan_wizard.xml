@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        
+        <record id="action_loan_wizard" model="ir.actions.act_window">
+            <field name="name">Loan Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loan.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="view_loan_wizard_form" model="ir.ui.view">
+            <field name="name">view.loan.wizard.form</field>
+            <field name="model">loan.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="status" />
+                            <field name="loan_ids" options="{'no_quick_create': True, 'no_create_edit': True}" domain="[('status', '=', status)]" attrs="{'invisible': [('status', '=', False)]}"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="print_pdf_report" string="Print Report" type="object" class="oe_highlight"/>
+                        <button string="Cancel" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <menuitem name="Loans Report" id="loans_report_menu" parent="reports_menu" action="action_loan_wizard"/>
+
+    </data>
+</odoo>
