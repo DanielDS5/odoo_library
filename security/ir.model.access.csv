@@ -1,4 +1,6 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 access_librarians_book,access.librarians.book,model_library_book,group_librarians,1,1,1,1
-access_readers_book,access.librarians.book,model_library_book,group_readers,1,0,0,0
+access_readers_book,access.readers.book,model_library_book,group_readers,1,0,0,0
 access_librarians_loan,access.librarians.loan,model_library_loan,group_librarians,1,1,1,1
+access_readers_loan,access.readers.loan,model_library_loan,group_readers,1,0,0,0
+access_loan_wizard,access.loan_wizard,model_loan_wizard,group_librarians,1,1,1,1

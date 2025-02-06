@@ -34,5 +34,12 @@
             <field name="groups" eval="[(4, ref('group_readers'))]"/>
             <field name="domain_force">[(1,'=',1)]</field>
         </record>
+
+        <record id="rule_readers_book" model="ir.rule">
+            <field name="name">Readers can read loans</field>
+            <field name="model_id" ref="model_library_loan"/>
+            <field name="groups" eval="[(4, ref('group_readers'))]"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
     </data>
 </odoo>
